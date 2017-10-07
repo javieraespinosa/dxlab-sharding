@@ -1,0 +1,50 @@
+
+version: '3'
+services:
+
+  cli:
+    image:    mongo:3.0
+    command:  /bin/bash 
+    working_dir: /root    
+    volumes:
+      - .:/root
+      
+          
+  configserver:
+    image:    mongo:3.0
+    command:  mongod --configsvr
+
+
+  "queryrouter.docker":
+    image:    mongo:3.0
+    command:  mongos --configdb configserver
+    depends_on: 
+      - configserver
+
+        
+  "shard1.docker":
+    image:    mongo:3.0
+    command:  mongod --shardsvr --port 27017 --nojournal
+
+
+  "shard2.docker":
+    image:    mongo:3.0
+    command:  mongod --shardsvr --port 27017 --nojournal
+
+
+  "shard3.docker":
+    image:    mongo:3.0
+    command:  mongod --shardsvr --port 27017 --nojournal
+
+
+  jupyter:
+    build:    .
+    image:    my-jupyter
+    command:  start-notebook.sh --NotebookApp.token='' --NotebookApp.base_url=/
+    ports:
+      - 8888:8888
+    volumes:
+      - .:/home/jovyan
+    
+    
+    
