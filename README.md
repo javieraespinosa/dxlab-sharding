@@ -14,7 +14,7 @@ The objective of this exercise is to illustrate the concept of [sharding][1], a 
 ## Installation
 Download and unzip the [hands-on material][5].
 
-Open a terminal and execute the following instruction inside the ```dxlab-sharding``` directory:
+Open a terminal and execute the following instructions inside the ```dxlab-sharding``` directory:
 
 ```bash
 docker-compose pull
