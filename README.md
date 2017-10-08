@@ -17,8 +17,7 @@ Download and unzip the [hands-on material][5].
 Open a terminal and execute the following instruction inside the ```dxlab-sharding``` directory:
 
 ```bash
-docker-compose pull
-docker-compose build
+docker-compose build 
 ```
 
 This will download the software required for this exercise (as [docker images][7]): 
@@ -75,7 +74,7 @@ Start the cluster as follows:
 
 ```bash
 # Start docker containers
-docker-compose up –d
+docker-compose up -d
 ```
 Cluster components run inside a virtual network as [docker containers][10]. You can list containers (and their IPs) as follows: 
 
@@ -360,7 +359,8 @@ Disconnect from cli (```ctr + d```).
 Stop containers and remove docker images:
 
 ```bash
-docker-compose down --rmi 'all'
+docker-compose down
+docker rmi -f mongo:3.0 jupyter/base-notebook dxlabsharding_jupyter 
 ```
 
 [1]: https://en.wikipedia.org/wiki/Shard_(database_architecture)
