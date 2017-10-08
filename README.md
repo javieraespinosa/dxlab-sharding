@@ -111,6 +111,7 @@ Add **shard 1** to cluster:
 ```javascript 
 // Change database 
 use admin
+
 // Add shard to cluster 
 db.runCommand({ 
   addShard: "shard1.docker", 
