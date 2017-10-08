@@ -17,7 +17,8 @@ Download and unzip the [hands-on material][5].
 Open a terminal and execute the following instruction inside the ```dxlab-sharding``` directory:
 
 ```bash
-docker-compose build 
+docker-compose pull
+docker-compose build
 ```
 
 This will download the software required for this exercise (as [docker images][7]): 
@@ -28,6 +29,7 @@ You can verify this by executing the following instruction:
 ```bash
 docker images
 ```
+
 That’s all. You are ready for the exercise.
 
 ## Introduction to MongoDB & Sharded Clusters
