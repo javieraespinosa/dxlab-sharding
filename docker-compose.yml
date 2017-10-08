@@ -39,7 +39,6 @@ services:
 
   jupyter:
     build:    .
-    image:    my-jupyter
     command:  start-notebook.sh --NotebookApp.token='' --NotebookApp.base_url=/
     ports:
       - 8888:8888
