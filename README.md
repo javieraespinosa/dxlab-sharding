@@ -127,7 +127,7 @@ sh.status()
 Disconnect now from query router (```ctr + c```). 
 
 
-> #### Q2. Which is the important information reported by _sh.status()_?
+> #### Q1. Which is the important information reported by _sh.status()_?
 
 
 ### Inserting and Querying data
