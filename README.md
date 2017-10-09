@@ -1,4 +1,4 @@
-# Sharding data collections with MongoDB
+# Sharding Data Collections with MongoDB
 
 
 ## Objective
