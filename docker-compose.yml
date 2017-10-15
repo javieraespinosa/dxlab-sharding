@@ -9,11 +9,12 @@ services:
     volumes:
       - .:/root
       
-          
+
   configserver:
     container_name: configserver  
     image:    mongo:3.0
-    command:  mongod --configsvr
+    command:  mongod --configsvr --nojournal
+
 
   "queryrouter.docker":
     container_name: queryrouter.docker  
@@ -30,13 +31,13 @@ services:
 
 
   "shard2.docker":
-    container_name: shard2.docker    
+    container_name: shard2.docker
     image:    mongo:3.0
     command:  mongod --shardsvr --port 27017 --nojournal
 
 
   "shard3.docker":
-    container_name: shard3.docker    
+    container_name: shard3.docker
     image:    mongo:3.0
     command:  mongod --shardsvr --port 27017 --nojournal
 
@@ -48,6 +49,4 @@ services:
       - 8888:8888
     volumes:
       - .:/home/jovyan
-    
-    
     
