@@ -1,5 +1,6 @@
-# Sharding Data Collections with MongoDB
 
+
+# Sharding Data Collections with MongoDB
 
 ## Objective
 
@@ -11,8 +12,8 @@ The objective of this exercise is to illustrate the concept of [sharding][1], a 
 + [Hands-on material][5] (github repository)
 
 
-## Installation
-Download and unzip the [hands-on material][5].
+## Installation and Configuration
+Download and unzip the [hands-on material][5] in your **computer desktop**.
 
 Open a terminal and execute the following instructions inside the ```dxlab-sharding``` directory:
 
@@ -29,6 +30,8 @@ You can verify this by executing the following instruction:
 ```bash
 docker images
 ```
+
+If you are using Docker Toolbox, open VirtualBox and configure the **default** virtual machine to map host port 8888 to guest port  8888 on TCP (see [instructions][17]).
 
 That’s all. You are ready for the exercise.
 
@@ -382,6 +385,7 @@ docker rmi -f mongo:3.0 jupyter/base-notebook dxlabsharding_jupyter
 [14]: https://www.mongodb.com
 [15]: https://docs.mongodb.com/manual/reference/sql-comparison/
 [16]: https://docs.mongodb.com/manual/core/sharding-balancer-administration/
+[17]: https://maazanjum.com/2014/04/09/virtualbox-nat-and-port-forwarding/
 
 [sharded-collection]: http://espinosa-oviedo.com/big-data-visualization/wp-content/uploads/sites/7/2017/10/sharded-collection.png
 
