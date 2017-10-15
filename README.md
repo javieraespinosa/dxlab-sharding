@@ -244,7 +244,6 @@ show collections
 Enable sharding on this collection using also attribute **state** as shard key:
 
 ```javascript
-sh.enableSharding("mydb") 
 sh.shardCollection(
   "mydb.cities2", { "state": "hashed" } 
 )
