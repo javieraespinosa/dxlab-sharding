@@ -386,11 +386,11 @@ docker rmi -f mongo:3.0 jupyter/base-notebook dxlabsharding_jupyter
 [16]: https://docs.mongodb.com/manual/core/sharding-balancer-administration/
 [17]: https://maazanjum.com/2014/04/09/virtualbox-nat-and-port-forwarding/
 
-[sharded-collection]: http://espinosa-oviedo.com/big-data-visualization/wp-content/uploads/sites/7/2017/10/sharded-collection.png
+[sharded-collection]: https://docs.mongodb.com/v3.0/_images/sharded-collection.png
 
-[cluster-architecture]: http://espinosa-oviedo.com/big-data-visualization/wp-content/uploads/sites/7/2017/10/sharded-cluster-production-architecture.png
+[cluster-architecture]: https://docs.mongodb.com/v3.0/_images/sharded-cluster.png
 
-[docker-cluster-img]: http://espinosa-oviedo.com/big-data-visualization/wp-content/uploads/sites/7/2017/10/docker-cluster.png
+[docker-cluster-img]: img/docker-cluster.png
 
-[sharding-migrating]: http://espinosa-oviedo.com/big-data-visualization/wp-content/uploads/sites/7/2017/10/sharding-migrating.png
+[sharding-migrating]: https://docs.mongodb.com/manual/_images/sharding-migrating.bakedsvg.svg
 

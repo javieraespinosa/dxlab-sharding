@@ -41,3 +41,12 @@ services:
     image:    mongo:3.0
     command:  mongod --shardsvr --port 27017 --nojournal
 
+
+  jupyter:
+    build:    .
+    command:  start-notebook.sh --NotebookApp.token='' --NotebookApp.base_url=/
+    ports:
+      - 8888:8888
+    volumes:
+      - .:/home/jovyan
+    
