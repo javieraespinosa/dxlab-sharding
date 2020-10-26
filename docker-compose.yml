@@ -22,22 +22,29 @@ services:
     command:  mongos --configdb configserver
     depends_on: 
       - configserver
-
+    ports:
+      - "27017:27017"
+        
         
   "shard1.docker":
     container_name: shard1.docker  
     image:    mongo:3.0
     command:  mongod --shardsvr --port 27017 --nojournal
+    ports:
+      - "27117:27017"
 
 
   "shard2.docker":
     container_name: shard2.docker
     image:    mongo:3.0
     command:  mongod --shardsvr --port 27017 --nojournal
+    ports:
+      - "27118:27017"
 
 
   "shard3.docker":
     container_name: shard3.docker
     image:    mongo:3.0
     command:  mongod --shardsvr --port 27017 --nojournal
-
+    ports:
+      - "27119:27017"
