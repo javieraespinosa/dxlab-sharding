@@ -88,7 +88,7 @@ Cluster components run inside a virtual network as [docker containers][10]. You 
 docker ps
 
 # List containers IPs
-docker network inspect dxlabsharding_default
+docker network inspect dxlab-sharding_default
 ```
 
 ### Cluster configuration
