@@ -2,38 +2,43 @@
 
 # Sharding Data Collections with MongoDB
 
-## Objective
-
 The objective of this exercise is to illustrate the concept of [sharding][1], a database partitioning technique for storing large data collections across multiple database servers. For this purpose, you will work with [MongoDB][2], a _document oriented database management system_ supporting different sharding strategies.
 
 
 ## Requirements
-+ [Docker Toolbox][3] (or [Docker CE][4] if supported by your OS)
+* Docker environment:
+  + Option 1 (**prefered**): [play-with-docker.com](http://play-with-docker.com)
+  + Option 2: [Docker Toolbox][3] or [Docker CE][4] depending on your OS
 + [Hands-on material][5] (github repository)
 
 
 ## Installation and Configuration
-Download and unzip the [hands-on material][5] in your **computer desktop**.
-
-Open a terminal and execute the following instructions inside the ```dxlab-sharding``` directory:
+Get the [hands-on material][5]:
 
 ```bash
-docker-compose pull
-docker-compose build
+git clone https://github.com/javieraespinosa/dxlab-sharding.git
 ```
 
-This will download the software required for this exercise (as [docker images][7]): 
-+ [MongoDB][14]
-+ [Jupyter Notebook][6]
-You can verify this by executing the following instruction:
+Download the MongoDB [docker image][7]:
+
+```bash
+# Enter lab folder
+cd dxlab-sharding
+
+# Downloads images specified in docker-compose.yml
+docker-compose pull
+```
+
+Verify the existence of the image:
 
 ```bash
 docker images
 ```
 
-If you are using Docker Toolbox, open VirtualBox and configure the **default** virtual machine to map host port 8888 to guest port  8888 on TCP (see [instructions][17]).
+> If you are using Docker Toolbox, open VirtualBox and configure the **default** virtual machine to map host port 8888 to guest port  8888 on TCP (see [instructions][17]).
 
-That’s all. You are ready for the exercise.
+That's it! You are ready to rock.
+
 
 ## Introduction to MongoDB & Sharded Clusters
 
@@ -64,17 +69,22 @@ MongoDB supports sharding via a _sharded cluster_. A sharded cluster is composed
 + **Query router**(s): redirect queries/operations to the appropriate shard (or shards).
 + **Config server**(s): store cluster’s metadata. Query router(s) uses this metadata to select appropriate shards.
 
-![cluster-architecture]
+<img src="https://docs.mongodb.com/v3.0/_images/sharded-cluster.png" width="400" />
+
 
 In MongoDB, sharding is enabled on a _per-collection_ basis. When enabled, MongoDB distributes the documents of the collection across the shards (i.e. mongo servers) of a cluster.
 
-![sharded-collection]
+<img src="https://docs.mongodb.com/v3.0/_images/sharded-collection.png" width="400" />
+
 
 ## Preparing a Sharded Cluster  
+
 For simplicity, you will start working with a _partially configured cluster_. The cluster will be composed of:
-+ 1 query router
-+ 1 config server
-+ 3 shards
+
+* 1 query router
+* 1 config server
+* 3 shards
+  
 Start the cluster as follows:
 
 ```bash
@@ -95,7 +105,7 @@ docker network inspect dxlab-sharding_default
 
 As shown in the figure, only the **query router** and **config server** are configured as part of a cluster. Let's complete the cluster by adding a shard server. 
 
-![docker-cluster-img]
+<img src="img/docker-cluster.png" width="400" />
 
 Enter the cluster environment:
 
@@ -355,7 +365,7 @@ sh.status()
 
 Not sure about data distribution? Try the  [sharding notebook](http://localhost:8888/notebooks/geo-visualization.ipynb).
 
-## Uninstalling
+## Uninstalling (if locally installed)
 
 Disconnect from query router (```ctr + c```).
 
@@ -365,7 +375,7 @@ Stop containers and remove docker images:
 
 ```bash
 docker-compose down
-docker rmi -f mongo:3.0 jupyter/base-notebook dxlabsharding_jupyter 
+docker rmi -f mongo:3.0 
 ```
 
 [1]: https://en.wikipedia.org/wiki/Shard_(database_architecture)
@@ -386,11 +396,6 @@ docker rmi -f mongo:3.0 jupyter/base-notebook dxlabsharding_jupyter
 [16]: https://docs.mongodb.com/manual/core/sharding-balancer-administration/
 [17]: https://maazanjum.com/2014/04/09/virtualbox-nat-and-port-forwarding/
 
-[sharded-collection]: https://docs.mongodb.com/v3.0/_images/sharded-collection.png
-
-[cluster-architecture]: https://docs.mongodb.com/v3.0/_images/sharded-cluster.png
-
-[docker-cluster-img]: img/docker-cluster.png
 
 [sharding-migrating]: https://docs.mongodb.com/manual/_images/sharding-migrating.bakedsvg.svg
 
