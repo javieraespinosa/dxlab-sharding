@@ -378,7 +378,7 @@ sh.status()
 > #### Q8. Analyze the results and explain the logic behind this tagging strategy. Connect to the shard that contains the data about California, and count the documents. Do the same operation with the other shards. Is the sharded data collection complete with respect to initial one? Are shards orthogonal?
 
 
-Not sure about data distribution? Try the  [sharding notebook](http://localhost:8888/notebooks/geo-visualization.ipynb).
+~~Not sure about data distribution? Try the [sharding notebook](http://localhost:8888/notebooks/geo-visualization.ipynb)~~.
 
 ## Uninstalling (if locally installed)
 
