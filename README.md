@@ -412,5 +412,5 @@ docker rmi -f mongo:3.0
 [17]: https://maazanjum.com/2014/04/09/virtualbox-nat-and-port-forwarding/
 
 
-[sharding-migrating]: https://docs.mongodb.com/manual/_images/sharding-migrating.bakedsvg.svg
+[sharding-migrating]: https://docs.mongodb.com/manual/images/sharding-migrating.bakedsvg.svg
 
