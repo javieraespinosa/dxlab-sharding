@@ -84,12 +84,12 @@ MongoDB supports sharding via a _sharded cluster_. A sharded cluster is composed
 + **Query router**(s): redirect queries/operations to the appropriate shard (or shards).
 + **Config server**(s): store cluster’s metadata. Query router(s) uses this metadata to select appropriate shards.
 
-<img src="https://docs.mongodb.com/v3.0/_images/sharded-cluster.png" width="400" />
+<img src="https://docs.mongodb.com/v4.4/images/sharded-cluster-production-architecture.bakedsvg.svg" width="400" />
 
 
 In MongoDB, sharding is enabled on a _per-collection_ basis. When enabled, MongoDB distributes the documents of the collection across the shards (i.e. mongo servers) of a cluster.
 
-<img src="https://docs.mongodb.com/v3.0/_images/sharded-collection.png" width="400" />
+<img src="https://docs.mongodb.com/v4.4/images/sharded-cluster-primary-shard.bakedsvg.svg" width="400" />
 
 
 ## Preparing a Sharded Cluster  
