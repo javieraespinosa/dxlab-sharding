@@ -304,7 +304,7 @@ sh.status()
 
 ## Balancing Data Across Shards 
 
-Independently of the selected partition strategy, when a shard server has too many chunks c(ompared to other shards in the cluster), MongoDB automatically redistributes the chunks across shards. This process is called [cluster balancing][16]. 
+Independently of the selected partition strategy, when a shard server has too many chunks (compared to other shards in the cluster), MongoDB automatically redistributes the chunks across shards. This process is called [cluster balancing][16]. 
 
 ![sharding-migrating]
 
