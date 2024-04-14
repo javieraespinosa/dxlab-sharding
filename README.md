@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 # Sharding Data Collections with MongoDB2
+=======
+# Sharding Data Collections with MongoDB
+>>>>>>> 2b5d51a6101f9e2bd1d11449d8e6e88809134446
 
 The objective of this exercise is to illustrate the concept of [sharding][1], a database partitioning technique for storing large data collections across multiple database servers. For this purpose, you will work with [MongoDB][2], a _document oriented database management system_ supporting different sharding strategies.
 
@@ -84,12 +88,12 @@ MongoDB supports sharding via a _sharded cluster_. A sharded cluster is composed
 + **Query router**(s): redirect queries/operations to the appropriate shard (or shards).
 + **Config server**(s): store cluster’s metadata. Query router(s) uses this metadata to select appropriate shards.
 
-<img src="https://docs.mongodb.com/v3.0/_images/sharded-cluster.png" width="400" />
+<img src="https://docs.mongodb.com/v4.4/images/sharded-cluster-production-architecture.bakedsvg.svg" width="400" />
 
 
 In MongoDB, sharding is enabled on a _per-collection_ basis. When enabled, MongoDB distributes the documents of the collection across the shards (i.e. mongo servers) of a cluster.
 
-<img src="https://docs.mongodb.com/v3.0/_images/sharded-collection.png" width="400" />
+<img src="https://docs.mongodb.com/v4.4/images/sharded-cluster-primary-shard.bakedsvg.svg" width="400" />
 
 
 ## Preparing a Sharded Cluster  
@@ -304,7 +308,7 @@ sh.status()
 
 ## Balancing Data Across Shards 
 
-Independently of the selected partition strategy, when a shard server has too many chunks c(ompared to other shards in the cluster), MongoDB automatically redistributes the chunks across shards. This process is called [cluster balancing][16]. 
+Independently of the selected partition strategy, when a shard server has too many chunks (compared to other shards in the cluster), MongoDB automatically redistributes the chunks across shards. This process is called [cluster balancing][16]. 
 
 ![sharding-migrating]
 
@@ -378,7 +382,7 @@ sh.status()
 > #### Q8. Analyze the results and explain the logic behind this tagging strategy. Connect to the shard that contains the data about California, and count the documents. Do the same operation with the other shards. Is the sharded data collection complete with respect to initial one? Are shards orthogonal?
 
 
-Not sure about data distribution? Try the  [sharding notebook](http://localhost:8888/notebooks/geo-visualization.ipynb).
+~~Not sure about data distribution? Try the [sharding notebook](http://localhost:8888/notebooks/geo-visualization.ipynb)~~.
 
 ## Uninstalling (if locally installed)
 
@@ -412,5 +416,5 @@ docker rmi -f mongo:3.0
 [17]: https://maazanjum.com/2014/04/09/virtualbox-nat-and-port-forwarding/
 
 
-[sharding-migrating]: https://docs.mongodb.com/manual/_images/sharding-migrating.bakedsvg.svg
+[sharding-migrating]: https://docs.mongodb.com/manual/images/sharding-migrating.bakedsvg.svg
 
