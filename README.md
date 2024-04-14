@@ -1,9 +1,24 @@
 
-
-# Sharding Data Collections with MongoDB
+# Sharding Data Collections with MongoDB2
 
 The objective of this exercise is to illustrate the concept of [sharding][1], a database partitioning technique for storing large data collections across multiple database servers. For this purpose, you will work with [MongoDB][2], a _document oriented database management system_ supporting different sharding strategies.
 
+## Table of Contents
+
+  - [Requirements](#requirements)
+  - [Installation and Configuration](#installation-and-configuration)
+  - [Introduction to MongoDB & Sharded Clusters](#introduction-to-mongodb--sharded-clusters)
+    - [MongoDB](#mongodb)
+    - [Sharded Clusters](#sharded-clusters)
+  - [Preparing a Sharded Cluster](#preparing-a-sharded-cluster)
+    - [Cluster configuration](#cluster-configuration)
+    - [Inserting and Querying data](#inserting-and-querying-data)
+  - [Sharding Database Collections](#sharding-database-collections)
+    - [Range Based Partitioning](#range-based-partitioning)
+    - [Hash Based Partitioning](#hash-based-partitioning)
+  - [Balancing Data Across Shards](#balancing-data-across-shards)
+  - [Guiding Partitioning Using Tags](#guiding-partitioning-using-tags)
+  - [Uninstalling (if locally installed)](#uninstalling-if-locally-installed)
 
 ## Requirements
 * Docker environment:
