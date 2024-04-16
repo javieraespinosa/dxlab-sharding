@@ -1,5 +1,5 @@
 
-version: '3'
+version: '3.8'
 services:
 
   cli:
@@ -9,42 +9,46 @@ services:
     volumes:
       - .:/root
       
-
+          
   configserver:
-    container_name: configserver  
     image:    mongo:3.0
-    command:  mongod --configsvr --nojournal
+    command:  mongod --configsvr
 
 
-  "queryrouter.docker":
-    container_name: queryrouter.docker  
+  queryrouter:
     image:    mongo:3.0
+    container_name: "queryrouter.docker"
     command:  mongos --configdb configserver
     depends_on: 
       - configserver
-    ports:
-      - "27017:27017"
+
         
-        
-  "shard1.docker":
-    container_name: shard1.docker  
+  shard1:
     image:    mongo:3.0
+    container_name: "shard1.docker"
     command:  mongod --shardsvr --port 27017 --nojournal
-    ports:
-      - "27117:27017"
 
 
-  "shard2.docker":
-    container_name: shard2.docker
+  shard2:
     image:    mongo:3.0
+    container_name: "shard2.docker"
     command:  mongod --shardsvr --port 27017 --nojournal
-    ports:
-      - "27118:27017"
 
 
-  "shard3.docker":
-    container_name: shard3.docker
+  shard3:
     image:    mongo:3.0
+    container_name: "shard3.docker"
     command:  mongod --shardsvr --port 27017 --nojournal
+
+
+  jupyter:
+    build:    .
+    image:    my-jupyter
+    command:  start-notebook.sh --NotebookApp.token='' --NotebookApp.base_url=/ --ip=*
     ports:
-      - "27119:27017"
+      - 8888:8888
+    volumes:
+      - .:/home/jovyan
+    
+    
+    
