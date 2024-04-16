@@ -1,5 +1,5 @@
 
-# Sharding Data Collections with MongoDB2
+# Sharding Data Collections with MongoDB
 
 The objective of this exercise is to illustrate the concept of [sharding][1], a database partitioning technique for storing large data collections across multiple database servers. For this purpose, you will work with [MongoDB][2], a _document oriented database management system_ supporting different sharding strategies.
 
