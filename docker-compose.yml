@@ -14,6 +14,9 @@ services:
     image:    mongo:3.0
     container_name: configserver
     command:  mongod --configsvr
+    healthcheck:
+      test: bash -c "exec 6<> /dev/tcp/localhost/27019"
+      interval: 1s
 
 
   queryrouter:
@@ -21,7 +24,8 @@ services:
     container_name: "queryrouter.docker"
     command:  mongos --configdb configserver
     depends_on: 
-      - configserver
+      configserver:
+        condition: service_healthy
 
         
   shard1:
@@ -45,11 +49,10 @@ services:
   jupyter:
     build:    .
     image:    my-jupyter
+    container_name: "jupyter"
     command:  start-notebook.sh --NotebookApp.token='' --NotebookApp.base_url=/ --ip=*
     ports:
       - 8888:8888
     volumes:
       - .:/home/jovyan
-    
-    
     
