@@ -12,6 +12,7 @@ services:
           
   configserver:
     image:    mongo:3.0
+    container_name: configserver
     command:  mongod --configsvr
 
 
