@@ -41,8 +41,8 @@ Download the MongoDB [docker image][7]:
 cd dxlab-sharding
 
 # Downloads images specified in docker-compose.yml
-docker-compose pull cli
-docker-compose build
+docker compose pull cli
+docker compose build
 ```
 
 Verify the existence of the image:
@@ -105,7 +105,7 @@ Start the cluster as follows:
 
 ```bash
 # Start docker containers
-docker-compose up -d
+docker compose up -d
 ```
 Cluster components run inside a virtual network as [docker containers][10]. You can list containers (and their IPs) as follows: 
 
@@ -126,7 +126,7 @@ As shown in the figure, only the **query router** and **config server** are conf
 Enter the cluster environment:
 
 ```bash 
-docker-compose run --rm cli
+docker compose run --rm cli
 ```
 
 Connect to the **query router**:
@@ -390,7 +390,7 @@ Disconnect from cli (```ctr + d```).
 Stop containers and remove docker images:
 
 ```bash
-docker-compose down
+docker compose down
 docker rmi -f mongo:3.0 
 ```
 
